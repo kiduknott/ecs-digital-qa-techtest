@@ -22,7 +22,7 @@ And the custom-tech-test url is launched
 When the RenderChallenge button is clicked
 Then the ArrayChallenge table is displayed
 
-Scenario Outline: The success text is displayed when the correct answers are submitted
+Scenario Outline: The success message is displayed when the correct answers are submitted
 Given custom-tech-test is running in Docker
 And the custom-tech-test url is launched
 When the RenderChallenge button is clicked
@@ -31,3 +31,25 @@ Then the success text <successMessage> is displayed
 Examples: 
 | successMessage                                                   | submitter   |
 | Congratulations you have succeeded. Please submit your challenge | Amatey Teye |
+
+Scenario Outline: The failure message is not displayed when the correct answers are submitted
+Given custom-tech-test is running in Docker
+And the custom-tech-test url is launched
+When the RenderChallenge button is clicked
+And the correct answers are submitted by <submitter>
+Then the failure text <failureMessage> is not displayed
+Examples: 
+| failureMessage            | submitter   |
+| It looks like your answer | Amatey Teye |
+
+Scenario Outline: The failure message is displayed when an correct answer is submitted
+Given custom-tech-test is running in Docker
+And the custom-tech-test url is launched
+When the RenderChallenge button is clicked
+And the answers with incorrect position <incorrectPosition> is submitted by <submitter>
+Then the failure text <failureMessage> is displayed
+Examples: 
+| failureMessage                               | incorrectPosition | submitter   |
+| It looks like your answer wasn't quite right | 1                 | Amatey Teye |
+| It looks like your answer wasn't quite right | 2                 | Amatey Teye |
+| It looks like your answer wasn't quite right | 3                 | Amatey Teye |

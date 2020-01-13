@@ -53,8 +53,35 @@ namespace EcsDigitalQaTechTest
             qaTechTestPage.SetSecondSubmitTextBox(correctAnswers[1]);
             qaTechTestPage.SetThirdSubmitTextBox(correctAnswers[2]);
             qaTechTestPage.SetFourthSubmitTextBox(submitter);
+            //qaTechTestPage.SetThirdSubmitTextBox("32332323");
             qaTechTestPage.ClickSubmitButton();
         }
+
+        [When(@"the answers with incorrect position ([0-9]+) is submitted by (.*)")]
+        public void WhenTheAnswersWithIsSubmittedByAmateyTeye(int incorrectPosition, string submitter)
+        {
+            var incorrectOffset = 3;
+            var correctAnswers = qaTechTestPage.CalculateCorrectAnswers();
+            qaTechTestPage.SetFirstSubmitTextBox(correctAnswers[0]);
+            qaTechTestPage.SetSecondSubmitTextBox(correctAnswers[1]);
+            qaTechTestPage.SetThirdSubmitTextBox(correctAnswers[2]);
+            qaTechTestPage.SetFourthSubmitTextBox(submitter);
+            if (1 == incorrectPosition)
+            {
+                qaTechTestPage.SetFirstSubmitTextBox((int.Parse(correctAnswers[0]) + incorrectOffset).ToString());
+            }
+            else if (2 == incorrectPosition)
+            {
+                qaTechTestPage.SetSecondSubmitTextBox((int.Parse(correctAnswers[1]) + incorrectOffset).ToString());
+            }
+            else if (3 == incorrectPosition)
+            {
+                qaTechTestPage.SetThirdSubmitTextBox((int.Parse(correctAnswers[2]) + incorrectOffset).ToString());
+            }
+
+            qaTechTestPage.ClickSubmitButton();
+        }
+
 
 
         [Then(@"the ArrayChallenge table is displayed")]
@@ -71,10 +98,25 @@ namespace EcsDigitalQaTechTest
             Assert.True(isSuccessMessageDisplayed, "The Success Message was not displayed");
         }
 
+        [Then(@"the failure text (.*) is not displayed")]
+        public void ThenTheFailureTextIsNotDisplayed(string failureText)
+        {
+            var isFailureMessageDisplayed = qaTechTestPage.IsMessagePresent(failureText);
+            Assert.False(isFailureMessageDisplayed, "The Failure Message was displayed but it should not have been.");
+        }
+
+        [Then(@"the failure text (.*) is displayed")]
+        public void ThenTheFailureTextIsDisplayed(string failureText)
+        {
+            var isFailureMessageDisplayed = qaTechTestPage.IsMessagePresent(failureText);
+            Assert.True(isFailureMessageDisplayed, "The Failure Message was not displayed but it should have been.");
+        }
+
 
         [AfterTestRun]
         public static void AfterTestRun()
         {
+            Console.Write("Closing Chrome browsers. Please wait...");
             ChromeBrowser.CloseAllChromeBrowsers();
         }
     }

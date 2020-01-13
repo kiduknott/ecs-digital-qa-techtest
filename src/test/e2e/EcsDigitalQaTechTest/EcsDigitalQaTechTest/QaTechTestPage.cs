@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
@@ -177,20 +178,16 @@ namespace EcsDigitalQaTechTest
         public void ClickSubmitButton()
         {
             var submitButton = chromeBrowser.FindFirstElementByTagNameAndContainsText(BUTTON, SUBMIT_ANSWERS);
-
-            /*var actions = new Actions(_);
-            actions.MoveToElement(submitButton);
-            actions.Perform();*/
-
             submitButton.Click();
         }
 
         public bool IsMessagePresent(string messageText)
         {
             chromeBrowser.SetSearchTimeout(INCREASED_SEARCH_TIMEOUT);
-            var successMessage = chromeBrowser.FindFirstElementByTagNameAndContainsText(DIV, messageText);
+            Thread.Sleep(1000); //Should have used WebDriverWait
+            var message = chromeBrowser.FindFirstElementByTagNameAndContainsText(DIV, messageText);
             chromeBrowser.SetSearchTimeoutToDefault();
-            return null != successMessage;
+            return null != message;
         }
     }
 }
