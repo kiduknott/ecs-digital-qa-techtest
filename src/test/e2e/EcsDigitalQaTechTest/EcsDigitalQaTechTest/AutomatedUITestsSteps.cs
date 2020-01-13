@@ -113,8 +113,8 @@ namespace EcsDigitalQaTechTest
         }
 
 
-        [AfterTestRun]
-        public static void AfterTestRun()
+        [AfterScenario]
+        public static void AfterScenario()
         {
             Console.Write("Closing Chrome browsers. Please wait...");
             ChromeBrowser.CloseAllChromeBrowsers();
