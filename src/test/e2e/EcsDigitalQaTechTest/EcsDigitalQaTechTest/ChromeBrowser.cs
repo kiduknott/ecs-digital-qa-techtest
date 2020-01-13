@@ -107,6 +107,31 @@ namespace EcsDigitalQaTechTest
             return result;
         }
 
+        public IWebElement FindElementByXPath(string xPath)
+        {
+            IWebElement result;
+            try
+            {
+                result = _driver.FindElement(By.XPath(xPath));
+            }
+            catch (NoSuchElementException)
+            {
+                result = null;
+            }
+
+            return result;
+        }
+
+        public void SetSearchTimeout(int timeoutInMilliseconds)
+        {
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(timeoutInMilliseconds);
+        }
+
+        public void SetSearchTimeoutToDefault()
+        {
+            SetSearchTimeout(0);
+        }
+
         public static void CloseAllChromeBrowsers()
         {
             var chromeProcesses = Process.GetProcessesByName(CHROME);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace EcsDigitalQaTechTest
@@ -24,6 +25,12 @@ namespace EcsDigitalQaTechTest
             qaTechTestPage.Launch();
         }
 
+        [When(@"the RenderChallenge button is clicked")]
+        public void WhenTheRenderChallengeButtonIsClicked()
+        {
+            qaTechTestPage.ClickRenderChallengeButton();
+        }
+
         [Then(@"the custom-tech-test web page is displayed with the title (.*)")]
         public void ThenTheCustom_Tech_TestWebPageIsDisplayed(string titleText)
         {
@@ -37,6 +44,14 @@ namespace EcsDigitalQaTechTest
             var isRenderChallengeButtonDisplayed = qaTechTestPage.IsRenderChallengeButtonDisplayed();
             Assert.True(isRenderChallengeButtonDisplayed, "The RenderChallenge button was not displayed");
         }
+
+        [Then(@"the ArrayChallenge table is displayed")]
+        public void ThenTheArrayChallengeTableIsDisplayed()
+        {
+            var isArrayChallengeTableDisplayed = qaTechTestPage.IsArrayChallengeTableDisplayed();
+            Assert.True(isArrayChallengeTableDisplayed, "The ArrayChallenge table was not displayed");
+        }
+
 
 
         [AfterTestRun]

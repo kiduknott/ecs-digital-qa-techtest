@@ -26,6 +26,7 @@ namespace EcsDigitalQaTechTest
         const string SUBMIT_ANSWERS = "SUBMIT ANSWERS";
         const string NULL = "null";
         const string CLOSE = "CLOSE";
+        private const int INCREASED_SEARCH_TIMEOUT = 30000;
 
         public QaTechTestPage()
         {
@@ -63,6 +64,17 @@ namespace EcsDigitalQaTechTest
             chromeBrowser.Dispose();
         }
 
-        
+        public void ClickRenderChallengeButton()
+        {
+            GetRenderChallengeButton().Click();
+        }
+
+        public bool? IsArrayChallengeTableDisplayed()
+        {
+            chromeBrowser.SetSearchTimeout(INCREASED_SEARCH_TIMEOUT);
+            var arrayChallengeTable = chromeBrowser.FindElementByXPath(ARRAY_TABLE_XPATH);
+            chromeBrowser.SetSearchTimeoutToDefault();
+            return null != arrayChallengeTable;
+        }
     }
 }
