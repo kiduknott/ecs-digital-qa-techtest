@@ -92,6 +92,21 @@ namespace EcsDigitalQaTechTest
             return result;
         }
 
+        public IWebElement FindElementByCssSelector(string cssSelector)
+        {
+            IWebElement result;
+            try
+            {
+                result = _driver.FindElement(By.CssSelector(cssSelector));
+            }
+            catch (NoSuchElementException)
+            {
+                result = null;
+            }
+
+            return result;
+        }
+
         public static void CloseAllChromeBrowsers()
         {
             var chromeProcesses = Process.GetProcessesByName(CHROME);

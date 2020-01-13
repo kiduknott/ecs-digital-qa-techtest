@@ -5,8 +5,13 @@ We want the application to conform to the business rules
 
 Scenario Outline: The custom-tech-test web page is displayed when the url is launched
 Given custom-tech-test is running in Docker
-When the custom-tech-test url is launched
+And the custom-tech-test url is launched
 Then the custom-tech-test web page is displayed with the title <TitleText>
 Examples: 
-| TitleText                                          |
+| TitleText                                            |
 | Welcome to the ECSDigital Engineer in Test tech test |
+
+Scenario Outline: The Render Challenge button is displayed when the url is launched
+Given custom-tech-test is running in Docker
+And the custom-tech-test url is launched
+Then the RenderChallenge button is displayed

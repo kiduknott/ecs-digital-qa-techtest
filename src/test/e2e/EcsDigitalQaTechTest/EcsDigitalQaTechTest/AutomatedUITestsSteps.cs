@@ -18,7 +18,7 @@ namespace EcsDigitalQaTechTest
             await dockerProxy.StartContainer(techTestContainerName);
         }
 
-        [When(@"the custom-tech-test url is launched")]
+        [Given(@"the custom-tech-test url is launched")]
         public void WhenTheCustom_Tech_TestUrlIsLaunched()
         {
             qaTechTestPage.Launch();
@@ -30,6 +30,14 @@ namespace EcsDigitalQaTechTest
             var isTitleDisplayed = qaTechTestPage.IsTitleDisplayed(titleText);
             Assert.True(isTitleDisplayed, "The custom tech web page was not displayed with text: {0}", titleText);
         }
+
+        [Then(@"the RenderChallenge button is displayed")]
+        public void ThenTheRenderChallengeButtonIsDisplayed()
+        {
+            var isRenderChallengeButtonDisplayed = qaTechTestPage.IsRenderChallengeButtonDisplayed();
+            Assert.True(isRenderChallengeButtonDisplayed, "The RenderChallenge button was not displayed");
+        }
+
 
         [AfterTestRun]
         public static void AfterTestRun()

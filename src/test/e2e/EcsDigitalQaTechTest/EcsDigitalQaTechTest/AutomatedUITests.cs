@@ -13,25 +13,11 @@ using OpenQA.Selenium.Interactions;
 
 namespace EcsDigitalQaTechTest
 {
-    public class AutomatedUITests : IDisposable
+    public class AutomatedUITests
     {
-        private IWebDriver _driver;
+        /*private IWebDriver _driver;
         private DockerClient dockerClient;
-        const string ARRAY_TABLE_XPATH = "//*[@id=\"challenge\"]/div/div/div[1]/div/div[2]/table";
-        const string TBODY = "tbody";
-        const string TR = "tr";
-        const string TD = "td";
-        const string RENDER_CHALLENGE_BUTTON_SELECTOR = "button[data-test-id=\"render-challenge\"]";
-        const string ARRAY_TABLE_CELL_SELECTOR_PREFIX = "td[data-test-id=\"array-item-";
-        const string SUBMIT_RESULT_TEXTBOX_PREFIX = "input[data-test-id=\"submit-";
-        const string AUTHOR = "Amatey Teye";
-        const string BUTTON = "button";
-        const string errorMessageText = "It looks like your answer wasn't quite right";
-        const string successMessageText = "Congratulations you have succeeded.Please submit your challenge";
-        const string DIV = "div";
-        const string SUBMIT_ANSWERS = "SUBMIT ANSWERS";
-        const string NULL = "null";
-        const string CLOSE = "CLOSE";
+  
 
         [SetUp]
         public async Task Setup()
@@ -205,6 +191,6 @@ namespace EcsDigitalQaTechTest
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(20000);
                 return false;
             }
-        }
+        }*/
     }
 }
