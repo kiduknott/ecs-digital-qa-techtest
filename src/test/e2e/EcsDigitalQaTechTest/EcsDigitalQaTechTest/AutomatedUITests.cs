@@ -56,11 +56,11 @@ namespace EcsDigitalQaTechTest
         [TearDown]
         public async Task TearDown()
         {
-            var digitalTestContainerListResponses = await GetContainersByImageName(dockerClient, "ecsd-tech-test:latest");
+            /*var digitalTestContainerListResponses = await GetContainersByImageName(dockerClient, "ecsd-tech-test:latest");
             foreach (var response in digitalTestContainerListResponses)
             {
                 await StopContainer(dockerClient, response);
-            }
+            }*/
         }
 
         private static async Task<List<ContainerListResponse>> GetContainersByImageName(DockerClient dockerClient, string imageName)
