@@ -34,15 +34,19 @@ namespace EcsDigitalQaTechTest
             return digitalTestContainers;
         }
 
-        public async Task StartContainer(ContainerListResponse containerListResponse)
+        public async Task StartContainer(string containerName)
         {
-            await dockerClient.Containers.StartContainerAsync(containerListResponse.ID,
+            var digitalTestContainerListResponses = GetContainersByImageName(containerName);
+            var firstContainer = digitalTestContainerListResponses[0];
+            await dockerClient.Containers.StartContainerAsync(firstContainer.ID,
                 new ContainerStartParameters());
         }
 
-        public async Task StopContainer(ContainerListResponse containerListResponse)
+        public async Task StopContainer(string containerName)
         {
-            await dockerClient.Containers.StopContainerAsync(containerListResponse.ID,
+            var digitalTestContainerListResponses = GetContainersByImageName(containerName);
+            var firstContainer = digitalTestContainerListResponses[0];
+            await dockerClient.Containers.StopContainerAsync(firstContainer.ID,
                 new ContainerStopParameters
                 {
                     WaitBeforeKillSeconds = (uint)maxWaitTimeContainerKill
