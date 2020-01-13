@@ -45,6 +45,18 @@ namespace EcsDigitalQaTechTest
             Assert.True(isRenderChallengeButtonDisplayed, "The RenderChallenge button was not displayed");
         }
 
+        [When(@"the correct answers are submitted by (.*)")]
+        public void WhenTheCorrectAnswersAreSubmittedBy(string submitter)
+        {
+            var correctAnswers = qaTechTestPage.CalculateCorrectAnswers();
+            qaTechTestPage.SetFirstSubmitTextBox(correctAnswers[0]);
+            qaTechTestPage.SetSecondSubmitTextBox(correctAnswers[1]);
+            qaTechTestPage.SetThirdSubmitTextBox(correctAnswers[2]);
+            qaTechTestPage.SetFourthSubmitTextBox(submitter);
+            qaTechTestPage.ClickSubmitButton();
+        }
+
+
         [Then(@"the ArrayChallenge table is displayed")]
         public void ThenTheArrayChallengeTableIsDisplayed()
         {
@@ -52,6 +64,12 @@ namespace EcsDigitalQaTechTest
             Assert.True(isArrayChallengeTableDisplayed, "The ArrayChallenge table was not displayed");
         }
 
+        [Then(@"the success text (.*) is displayed")]
+        public void ThenTheSuccessTextIsDisplayed(string successText)
+        {
+            var isSuccessMessageDisplayed = qaTechTestPage.IsMessagePresent(successText);
+            Assert.True(isSuccessMessageDisplayed, "The Success Message was not displayed");
+        }
 
 
         [AfterTestRun]

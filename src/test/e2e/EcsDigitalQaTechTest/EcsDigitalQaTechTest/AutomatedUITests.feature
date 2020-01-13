@@ -1,7 +1,7 @@
 ﻿Feature: AutomatedUITests
-In order to have a correctly functioning application
+In order to have a correctly functioning Custom Tech Test application
 AS A product team
-We want the application to conform to the business rules
+We want the application to conform to the stated business rules
 
 Scenario Outline: The custom-tech-test web page is displayed when the url is launched
 Given custom-tech-test is running in Docker
@@ -16,8 +16,18 @@ Given custom-tech-test is running in Docker
 And the custom-tech-test url is launched
 Then the RenderChallenge button is displayed
 
-Scenario Outline: Clicking the RenderChallenge button displays the ArrayChallenge table
+Scenario: Clicking the RenderChallenge button displays the ArrayChallenge table
 Given custom-tech-test is running in Docker
 And the custom-tech-test url is launched
 When the RenderChallenge button is clicked
 Then the ArrayChallenge table is displayed
+
+Scenario Outline: The success text is displayed when the correct answers are submitted
+Given custom-tech-test is running in Docker
+And the custom-tech-test url is launched
+When the RenderChallenge button is clicked
+And the correct answers are submitted by <submitter>
+Then the success text <successMessage> is displayed
+Examples: 
+| successMessage                                                   | submitter   |
+| Congratulations you have succeeded. Please submit your challenge | Amatey Teye |

@@ -15,7 +15,7 @@ namespace EcsDigitalQaTechTest
 {
     public class AutomatedUITests
     {
-        /*private IWebDriver _driver;
+        private IWebDriver _driver;
         private DockerClient dockerClient;
   
 
@@ -34,7 +34,7 @@ namespace EcsDigitalQaTechTest
 
 
 
-        [Test]
+        /*[Test]
         public void ECSDigitalWebSiteOpensWhenLaunchedViaUrl()
         {
             _driver.Navigate().GoToUrl("http://localhost:3000/");
@@ -114,15 +114,7 @@ namespace EcsDigitalQaTechTest
             var nameTextBox = _driver.FindElement(By.CssSelector(nameTextboxSelector));
             nameTextBox.SendKeys(AUTHOR);
 
-            var buttons = _driver.FindElements(By.TagName(BUTTON)).ToList();
-
-            var submitButton = buttons.Where(b => b.Text.Equals(SUBMIT_ANSWERS)).ToList()[0];
-
-            var actions = new Actions(_driver);
-            actions.MoveToElement(submitButton);
-            actions.Perform();
-
-            submitButton.Click();
+            
 
             Thread.Sleep(5000);
 
@@ -139,7 +131,7 @@ namespace EcsDigitalQaTechTest
             Thread.Sleep(2000);
             //Assert.Pass();
         }
-
+*/
         public void Dispose()
         {
             _driver.Quit();
@@ -191,6 +183,6 @@ namespace EcsDigitalQaTechTest
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(20000);
                 return false;
             }
-        }*/
+        }
     }
 }

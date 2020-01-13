@@ -50,7 +50,7 @@ namespace EcsDigitalQaTechTest
             var allElementsByClassName = _driver.FindElements(By.TagName(tagName)).ToList();
             if (allElementsByClassName.Count != 0)
             {
-                var filteredElements = allElementsByClassName.Where(b => b.Text.Equals(containsText)).ToList();
+                var filteredElements = allElementsByClassName.Where(b => b.Text.Contains(containsText)).ToList();
                 if (filteredElements.Count != 0)
                 {
                     result = filteredElements[0];
