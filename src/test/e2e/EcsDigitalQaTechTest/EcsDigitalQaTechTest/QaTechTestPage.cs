@@ -29,6 +29,11 @@ namespace EcsDigitalQaTechTest
 
         public void Close()
         {
+            chromeBrowser.Close();
+        }
+
+        public void Dispose()
+        {
             chromeBrowser.Dispose();
         }
     }

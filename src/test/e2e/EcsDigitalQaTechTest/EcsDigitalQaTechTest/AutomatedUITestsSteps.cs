@@ -31,10 +31,10 @@ namespace EcsDigitalQaTechTest
             Assert.True(isTitleDisplayed, "The custom tech web page was not displayed with text: {0}", titleText);
         }
 
-        [OneTimeTearDown]
-        public void TearDown()
+        [AfterTestRun]
+        public static void AfterTestRun()
         {
-            qaTechTestPage.Close();
+            ChromeBrowser.CloseAllChromeBrowsers();
         }
     }
 }

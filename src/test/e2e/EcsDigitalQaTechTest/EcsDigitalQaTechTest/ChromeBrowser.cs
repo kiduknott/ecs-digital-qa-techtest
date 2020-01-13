@@ -92,7 +92,7 @@ namespace EcsDigitalQaTechTest
             return result;
         }
 
-        private void CloseAllChromeBrowsers()
+        public static void CloseAllChromeBrowsers()
         {
             var chromeProcesses = Process.GetProcessesByName(CHROME);
             var numChrome = chromeProcesses.Length;
@@ -102,6 +102,11 @@ namespace EcsDigitalQaTechTest
                 process.WaitForExit();
                 var hasExited = process.HasExited;
             }
+        }
+
+        public void Close()
+        {
+            _driver.Close();
         }
 
         public void Dispose()
