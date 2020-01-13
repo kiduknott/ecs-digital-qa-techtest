@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 
 namespace EcsDigitalQaTechTest
 {
@@ -21,14 +18,10 @@ namespace EcsDigitalQaTechTest
         const string RENDER_CHALLENGE_BUTTON_SELECTOR = "button[data-test-id=\"render-challenge\"]";
         const string ARRAY_TABLE_CELL_SELECTOR_PREFIX = "td[data-test-id=\"array-item-";
         const string SUBMIT_RESULT_TEXTBOX_PREFIX = "input[data-test-id=\"submit-";
-        const string AUTHOR = "Amatey Teye";
         const string BUTTON = "button";
-        const string errorMessageText = "It looks like your answer wasn't quite right";
-        const string successMessageText = "Congratulations you have succeeded.Please submit your challenge";
         const string DIV = "div";
         const string SUBMIT_ANSWERS = "SUBMIT ANSWERS";
         const string NULL = "null";
-        const string CLOSE = "CLOSE";
         private const int INCREASED_SEARCH_TIMEOUT = 30000;
 
         public QaTechTestPage()
