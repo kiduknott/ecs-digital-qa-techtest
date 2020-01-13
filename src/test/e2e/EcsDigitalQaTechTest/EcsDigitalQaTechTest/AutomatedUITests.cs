@@ -32,76 +32,21 @@ namespace EcsDigitalQaTechTest
         const string SUBMIT_ANSWERS = "SUBMIT ANSWERS";
         const string NULL = "null";
         const string CLOSE = "CLOSE";
-        const string CHROME = "chrome";
 
         [SetUp]
         public async Task Setup()
         {
             //Start and stop application: https://github.com/microsoft/Docker.DotNet
-            dockerClient = CreateDockerClient();
-            var digitalTestContainerListResponses = await GetContainersByImageName(dockerClient, "ecsd-tech-test:latest");
-            await StartContainer(dockerClient, digitalTestContainerListResponses[0]);
+            //dockerClient = CreateDockerClient();
+            
             //CloseAllChromeBrowsers();
             _driver = new ChromeDriver();
         }
 
-        private DockerClient CreateDockerClient()
-        {
-            //no idea how to connect - used the example and it worked
-            return new DockerClientConfiguration(
-                    new Uri("npipe://./pipe/docker_engine"))
-                .CreateClient();
-        }
 
-        [TearDown]
-        public async Task TearDown()
-        {
-            /*var digitalTestContainerListResponses = await GetContainersByImageName(dockerClient, "ecsd-tech-test:latest");
-            foreach (var response in digitalTestContainerListResponses)
-            {
-                await StopContainer(dockerClient, response);
-            }*/
-        }
 
-        private static async Task<List<ContainerListResponse>> GetContainersByImageName(DockerClient dockerClient, string imageName)
-        {
-            var containers = await dockerClient.Containers.ListContainersAsync(
-                new ContainersListParameters()
-                {
-                    Limit = 10,
-                });
-            var digitalTestContainers =
-                containers.Where(c => c.Image.Equals(imageName)).ToList();
-            return digitalTestContainers;
-        }
 
-        private static async Task StartContainer(DockerClient dockerClient, ContainerListResponse containerListResponse)
-        {
-            await dockerClient.Containers.StartContainerAsync(containerListResponse.ID,
-                new ContainerStartParameters());
-        }
 
-        private static async Task StopContainer(DockerClient dockerClient, ContainerListResponse containerListResponse)
-        {
-            await dockerClient.Containers.StopContainerAsync(containerListResponse.ID,
-                new ContainerStopParameters
-                {
-                    WaitBeforeKillSeconds = 30
-                },
-                CancellationToken.None);
-        }
-
-        private void CloseAllChromeBrowsers()
-        {
-            var chromeProcesses = Process.GetProcessesByName(CHROME);
-            var numChrome = chromeProcesses.Length;
-            foreach (var process in chromeProcesses)
-            {
-                process.Kill(true);
-                process.WaitForExit();
-                var hasExited = process.HasExited;
-            }
-        }
 
         [Test]
         public void ECSDigitalWebSiteOpensWhenLaunchedViaUrl()
