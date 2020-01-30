@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Akt.Docker\Akt.Docker.csproj" />
+    <ProjectReference Include="..\Akt.Selenium.EcsDigital\Akt.Selenium.EcsDigital.csproj" />
     <ProjectReference Include="..\Akt.Specflow.EcsQaTechTest\Akt.Selenium.EcsDigital.csproj" />
   </ItemGroup>
 

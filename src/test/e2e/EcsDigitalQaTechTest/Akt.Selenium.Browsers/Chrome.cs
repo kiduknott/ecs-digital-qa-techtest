@@ -4,7 +4,7 @@ using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace Akt.WebDriver.Browsers
+namespace Akt.Selenium.Browsers
 {
     public class Chrome : IDisposable
     {

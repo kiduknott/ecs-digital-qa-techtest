@@ -1,6 +1,7 @@
 ﻿using System;
 using Akt.Docker;
-using Akt.WebDriver.Browsers;
+using Akt.Selenium.Browsers;
+using Akt.Selenium.EcsDigital.Pages;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -10,7 +11,7 @@ namespace Akt.Specflow.UITests.EcsDigital.Steps
     public class QaTechTestPageSteps
     {
         private string techTestContainerName = "ecsd-tech-test:latest";
-        private Akt.Selenium.EcsDigital.Pages.QaTechTestPage qaTechTestPage = new Akt.Selenium.EcsDigital.Pages.QaTechTestPage();
+        private QaTechTestPage qaTechTestPage = new QaTechTestPage();
 
         [Given(@"custom-tech-test is running in Docker")]
         public async void GivenCustom_Tech_TestIsRunningInDocker()

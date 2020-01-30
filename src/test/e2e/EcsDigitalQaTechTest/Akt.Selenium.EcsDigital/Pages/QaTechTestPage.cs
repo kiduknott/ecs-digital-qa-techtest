@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Akt.WebDriver.Browsers;
+using Akt.Selenium.Browsers;
 using OpenQA.Selenium;
 
 namespace Akt.Selenium.EcsDigital.Pages
