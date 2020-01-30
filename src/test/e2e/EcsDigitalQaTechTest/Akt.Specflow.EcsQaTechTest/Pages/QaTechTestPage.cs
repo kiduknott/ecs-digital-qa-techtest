@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Akt.Selenium.Browsers;
+using Akt.WebDriver.Browsers;
 using OpenQA.Selenium;
 
-namespace EcsDigitalQaTechTest
+namespace Akt.Selenium.EcsDigital.Pages
 {
     public class QaTechTestPage
     {

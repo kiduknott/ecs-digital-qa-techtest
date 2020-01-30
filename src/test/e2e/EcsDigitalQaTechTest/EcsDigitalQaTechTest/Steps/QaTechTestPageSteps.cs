@@ -1,16 +1,16 @@
 ﻿using System;
 using Akt.Docker;
-using Akt.Selenium.Browsers;
+using Akt.WebDriver.Browsers;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
-namespace EcsDigitalQaTechTest
+namespace Akt.Specflow.UITests.EcsDigital.Steps
 {
     [Binding]
-    public class AutomatedUITestsSteps
+    public class QaTechTestPageSteps
     {
         private string techTestContainerName = "ecsd-tech-test:latest";
-        private QaTechTestPage qaTechTestPage = new QaTechTestPage();
+        private Akt.Selenium.EcsDigital.Pages.QaTechTestPage qaTechTestPage = new Akt.Selenium.EcsDigital.Pages.QaTechTestPage();
 
         [Given(@"custom-tech-test is running in Docker")]
         public async void GivenCustom_Tech_TestIsRunningInDocker()
@@ -53,7 +53,6 @@ namespace EcsDigitalQaTechTest
             qaTechTestPage.SetSecondSubmitTextBox(correctAnswers[1]);
             qaTechTestPage.SetThirdSubmitTextBox(correctAnswers[2]);
             qaTechTestPage.SetFourthSubmitTextBox(submitter);
-            //qaTechTestPage.SetThirdSubmitTextBox("32332323");
             qaTechTestPage.ClickSubmitButton();
         }
 
