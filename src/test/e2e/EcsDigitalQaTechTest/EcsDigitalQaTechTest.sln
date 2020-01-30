@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akt.Selenium.Browsers", "Ak
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akt.Docker", "Akt.Docker\Akt.Docker.csproj", "{8B448B72-926F-4FC5-9A06-7E683A52B8AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akt.Selenium.EcsDigital", "Akt.Specflow.EcsQaTechTest\Akt.Selenium.EcsDigital.csproj", "{6FEDCABE-640F-40E1-ACBF-EC30C1CDA7D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akt.Selenium.EcsDigital", "Akt.Selenium.EcsDigital\Akt.Selenium.EcsDigital.csproj", "{6FEDCABE-640F-40E1-ACBF-EC30C1CDA7D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
