@@ -1,4 +1,5 @@
 ﻿using System;
+using Akt.Selenium.Browsers;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -115,7 +116,7 @@ namespace EcsDigitalQaTechTest
         public static void AfterScenario()
         {
             Console.Write("Closing Chrome browsers. Please wait...");
-            ChromeBrowser.CloseAllChromeBrowsers();
+            Chrome.CloseAllChromeBrowsers();
         }
     }
 }

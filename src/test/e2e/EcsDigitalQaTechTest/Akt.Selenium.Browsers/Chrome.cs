@@ -4,14 +4,14 @@ using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace EcsDigitalQaTechTest
+namespace Akt.Selenium.Browsers
 {
-    public class ChromeBrowser : IDisposable
+    public class Chrome : IDisposable
     {
         private IWebDriver _driver;
         private const string CHROME = "chrome";
 
-        public ChromeBrowser()
+        public Chrome()
         {
             _driver = new ChromeDriver();
         }

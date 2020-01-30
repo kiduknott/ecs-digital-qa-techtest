@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcsDigitalQaTechTest", "EcsDigitalQaTechTest\EcsDigitalQaTechTest.csproj", "{B1B18214-7A3E-4FCA-8643-EE6F07D747DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcsDigitalQaTechTest", "EcsDigitalQaTechTest\EcsDigitalQaTechTest.csproj", "{B1B18214-7A3E-4FCA-8643-EE6F07D747DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akt.Selenium.Browsers", "Akt.Selenium.Browsers\Akt.Selenium.Browsers.csproj", "{231BD5D5-7E84-4291-AB3D-9C1E491F8F3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B1B18214-7A3E-4FCA-8643-EE6F07D747DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B18214-7A3E-4FCA-8643-EE6F07D747DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B18214-7A3E-4FCA-8643-EE6F07D747DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231BD5D5-7E84-4291-AB3D-9C1E491F8F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231BD5D5-7E84-4291-AB3D-9C1E491F8F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231BD5D5-7E84-4291-AB3D-9C1E491F8F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231BD5D5-7E84-4291-AB3D-9C1E491F8F3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

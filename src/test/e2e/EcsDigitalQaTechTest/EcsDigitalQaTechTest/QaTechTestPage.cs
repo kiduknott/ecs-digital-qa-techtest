@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Akt.Selenium.Browsers;
 using OpenQA.Selenium;
 
 namespace EcsDigitalQaTechTest
 {
     public class QaTechTestPage
     {
-        private static ChromeBrowser chromeBrowser;
+        private static Chrome chromeBrowser;
         private const string customTechTestUrl = "http://localhost:3000/";
         private bool closeOpenBrowsers = false;
         private const string TITLE = "title";
@@ -26,7 +27,7 @@ namespace EcsDigitalQaTechTest
 
         public QaTechTestPage()
         {
-            chromeBrowser = new ChromeBrowser();
+            chromeBrowser = new Chrome();
         }
 
         public void Launch()
