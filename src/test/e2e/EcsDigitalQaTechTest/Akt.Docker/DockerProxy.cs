@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Docker.DotNet;
 using Docker.DotNet.Models;
 
-namespace EcsDigitalQaTechTest
+namespace Akt.Docker
 {
     public class DockerProxy
     {
@@ -18,7 +18,7 @@ namespace EcsDigitalQaTechTest
         public DockerProxy()
         {
             dockerClient = new DockerClientConfiguration(
-                    new Uri(defaultWindowsDockerUrl)).CreateClient();
+                new Uri(defaultWindowsDockerUrl)).CreateClient();
         }
 
         public List<ContainerListResponse> GetContainersByImageName(string imageName)

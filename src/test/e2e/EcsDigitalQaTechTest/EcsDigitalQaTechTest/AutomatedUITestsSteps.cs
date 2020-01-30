@@ -1,4 +1,5 @@
 ﻿using System;
+using Akt.Docker;
 using Akt.Selenium.Browsers;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
