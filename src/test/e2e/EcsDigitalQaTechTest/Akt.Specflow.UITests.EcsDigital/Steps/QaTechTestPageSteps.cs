@@ -59,7 +59,7 @@ namespace Akt.Specflow.UITests.EcsDigital.Steps
         }
 
         [When(@"the answers with incorrect position ([0-9]+) is submitted by (.*)")]
-        public void WhenTheAnswersWithIsSubmittedByAmateyTeye(int incorrectPosition, string submitter)
+        public void WhenTheAnswersWithIsSubmittedBy(int incorrectPosition, string submitter)
         {
             var incorrectOffset = 3;
             var correctAnswers = qaTechTestPage.CalculateCorrectAnswers();
@@ -80,7 +80,7 @@ namespace Akt.Specflow.UITests.EcsDigital.Steps
                 qaTechTestPage.SetThirdSubmitTextBox((int.Parse(correctAnswers[2]) + incorrectOffset).ToString());
             }
 
-            Thread.Sleep(500);
+            Thread.Sleep(500); //TODO: Intermediate workaround - Stale element exception
             qaTechTestPage.ClickSubmitButton();
         }
 
