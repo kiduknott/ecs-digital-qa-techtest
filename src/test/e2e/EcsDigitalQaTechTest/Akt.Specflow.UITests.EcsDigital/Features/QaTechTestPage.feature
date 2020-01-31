@@ -1,4 +1,4 @@
-﻿Feature: AutomatedUITests
+﻿Feature: ECS QA Tech Tests
 In order to have a correctly functioning Custom Tech Test application
 AS A product team
 We want the application to conform to the stated business rules
@@ -30,7 +30,7 @@ And the correct answers are submitted by <submitter>
 Then the success text <successMessage> is displayed
 Examples: 
 | successMessage                                                   | submitter   |
-| Congratulations you have succeeded. Please submit your challenge | TestSubmitter |
+| Congratulations you have succeeded. Please submit your challenge | Amatey Teye |
 
 Scenario Outline: The failure message is not displayed when the correct answers are submitted
 Given custom-tech-test is running in Docker
@@ -40,7 +40,7 @@ And the correct answers are submitted by <submitter>
 Then the failure text <failureMessage> is not displayed
 Examples: 
 | failureMessage            | submitter   |
-| It looks like your answer | TestSubmitter |
+| It looks like your answer | Amatey Teye |
 
 Scenario Outline: The failure message is displayed when an correct answer is submitted
 Given custom-tech-test is running in Docker
@@ -50,6 +50,6 @@ And the answers with incorrect position <incorrectPosition> is submitted by <sub
 Then the failure text <failureMessage> is displayed
 Examples: 
 | failureMessage                               | incorrectPosition | submitter   |
-| It looks like your answer wasn't quite right | 1                 | TestSubmitter |
-| It looks like your answer wasn't quite right | 2                 | TestSubmitter |
-| It looks like your answer wasn't quite right | 3                 | TestSubmitter |
+| It looks like your answer wasn't quite right | 1                 | Amatey Teye |
+| It looks like your answer wasn't quite right | 2                 | Amatey Teye |
+| It looks like your answer wasn't quite right | 3                 | Amatey Teye |

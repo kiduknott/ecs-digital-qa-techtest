@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Akt.Docker;
 using Akt.Selenium.Browsers;
 using Akt.Selenium.EcsDigital.Pages;
@@ -79,6 +80,7 @@ namespace Akt.Specflow.UITests.EcsDigital.Steps
                 qaTechTestPage.SetThirdSubmitTextBox((int.Parse(correctAnswers[2]) + incorrectOffset).ToString());
             }
 
+            Thread.Sleep(500);
             qaTechTestPage.ClickSubmitButton();
         }
 
