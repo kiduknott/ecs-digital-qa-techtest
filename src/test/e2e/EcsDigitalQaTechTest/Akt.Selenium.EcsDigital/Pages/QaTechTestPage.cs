@@ -152,7 +152,7 @@ namespace Akt.Selenium.EcsDigital.Pages
         public bool IsMessagePresent(string messageText)
         {
             chromeBrowser.SetSearchTimeout(INCREASED_SEARCH_TIMEOUT);
-            Thread.Sleep(1000); //Should have used WebDriverWait
+            Thread.Sleep(1000); //TODO: Refactor to use WebDriverWait
             var message = chromeBrowser.FindFirstElementByTagNameAndContainsText(DIV, messageText);
             chromeBrowser.SetSearchTimeoutToDefault();
             return null != message;
